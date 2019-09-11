@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // External Components
-import { Item, Label, Header } from 'semantic-ui-react'
+import { Item, Label, Header, Loader } from 'semantic-ui-react'
 
 class ProductDetails extends Component {
     render() {
@@ -34,7 +34,7 @@ class ProductDetails extends Component {
                                 )
                                 }
                             </Item.Group>
-                        ) : null
+                        ) : <Loader active inline='centered' />
                 }
             </div>
         );
