@@ -13,7 +13,7 @@ The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
 
-### Dayes web application functionality
+### `Dayes web application functionality`
 
 - Theoretical homepage (no content).
 - Products page.
@@ -23,7 +23,7 @@ You will also see any lint errors in the console.
 - Error page with timed pushback to Homepage.
 
 
-### Technologies used
+### `Technologies used`
 
 - React.js 
 - Semantic React UI 
