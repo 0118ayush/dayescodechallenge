@@ -5,5 +5,4 @@ export function getProducts() {
         .then(resp => resp.json())
 }
 
-
 export default { getProducts }

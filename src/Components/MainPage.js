@@ -67,10 +67,12 @@ class MainPage extends Component {
                     <Route exact path="/products/:id" render={(props) => {
                         let product = this.state.allProducts.find(product => product.id === parseInt(props.match.params.id, 10))
                         return <ProductDetails product={product} />
-
                     }} />
+
                     <Route exact path="/products" render={() => <ProductList allProducts={this.state.allProducts} tamponSize={this.state.tamponSize} packSize={this.state.packSize} sortBy={this.state.sortBy} />} />
+
                     <Route exact path="/" render={() => <Homepage />} />
+
                     <Route render={() => <ErrorPage />} />
                 </Switch>
             </div>

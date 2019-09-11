@@ -54,9 +54,8 @@ class ProductList extends Component {
             })
             return products
         }
-        if (this.props.sortBy === "Default") {
-            return products
-        }
+
+        return products
     }
 
     render() {

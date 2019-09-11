@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+// External components
 import { Dropdown, Menu } from 'semantic-ui-react'
 import { Link, withRouter } from "react-router-dom"
 

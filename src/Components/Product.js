@@ -22,7 +22,7 @@ class Product extends Component {
 
                     <Card.Content extra>
                         Click to view details
-                </Card.Content>
+                    </Card.Content>
                 </Card>
             </Link>
         );
