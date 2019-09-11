@@ -26,7 +26,7 @@ class ErrorPage extends Component {
         return (
             <div align="center">
                 <h1>404 ERROR - PAGE NOT FOUND - SENDING YOU TO HOMEPAGE... </h1>
-                <img src="https://media.giphy.com/media/3ktLJJs5fYT6NP005b/giphy.gif" />
+                <img src="https://media.giphy.com/media/3ktLJJs5fYT6NP005b/giphy.gif" alt="error gif" />
             </div>
         );
     }
