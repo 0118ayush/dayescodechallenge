@@ -37,15 +37,36 @@ class ProductList extends Component {
         }
     }
 
+    sortProductOrder = (products) => {
+        if (this.props.sortBy === "Price: low to high") {
+            products.sort((a, b) => {
+                if (a.price < b.price) return -1
+                if (a.price > b.price) return 1
+                return 0
+            })
+            return products
+        }
+        if (this.props.sortBy === "Price: high to low") {
+            products.sort((a, b) => {
+                if (a.price < b.price) return 1
+                if (a.price > b.price) return -1
+                return 0
+            })
+            return products
+        }
+        if (this.props.sortBy === "Default") {
+            return products
+        }
+    }
 
     render() {
         return (
             <div>
                 {
-                    this.props.allProducts && this.props.tamponSize && this.props.packSize ?
+                    this.props.allProducts && this.props.tamponSize && this.props.packSize && this.props.sortBy ?
                         <Card.Group itemsPerRow={4}>
                             {
-                                this.filterPackSize(this.filterTamponSize()).map(product => <Card><Product product={product} /></Card>)
+                                this.sortProductOrder(this.filterPackSize(this.filterTamponSize())).map(product => <Card align="center"><Product product={product} /></Card>)
                             }
                         </Card.Group>
                         : <Loader active inline='centered' />
