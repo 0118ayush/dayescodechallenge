@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 // External Components
-import { Item, Label, Header, Loader } from 'semantic-ui-react'
+import { Item, Label, Header, Loader, Button } from 'semantic-ui-react'
+import { Link } from "react-router-dom"
 
 class ProductDetails extends Component {
     render() {
@@ -29,10 +30,17 @@ class ProductDetails extends Component {
                                             <Item.Extra>
                                                 <Label>Pack size: {tampon.amount}</Label>
                                             </Item.Extra>
+                                            <Item.Extra>
+                                                <Button color='olive' onClick={() => this.props.addToBasket(this.props.product, tampon)}>Add to basket</Button>
+                                            </Item.Extra>
                                         </Item.Content>
                                     </Item>
                                 )
                                 }
+                                <br />
+                                <Link to="/products">
+                                    <Button size='small' color="green">Back</Button>
+                                </Link>
                             </Item.Group>
                         ) : <Loader active inline='centered' />
                 }

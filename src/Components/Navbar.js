@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // External components
-import { Dropdown, Menu } from 'semantic-ui-react'
+import { Dropdown, Menu, Button } from 'semantic-ui-react'
 import { Link, withRouter } from "react-router-dom"
 
 
@@ -28,6 +28,7 @@ class Navbar extends Component {
         ]
 
         return (
+
             <Menu size='small'>
                 <Menu.Item>
                     <img style={{ borderRadius: "50%" }} alt="logo" src="https://media.licdn.com/dms/image/C4D0BAQGh4j08Y_6sDw/company-logo_200_200/0?e=2159024400&v=beta&t=kz6Sau1srSvpMIk-oas3VLN_dNU-DxtcOijnC5rIeO0" />
@@ -42,14 +43,25 @@ class Navbar extends Component {
                 </Link>
 
                 {
-                    this.props.location.pathname === "/products" ?
-                        <Menu.Menu position='right'>
-                            <Dropdown text='Tampon size' options={tamponSizes} simple item onChange={this.props.changeTamponSize} />
-                            <Dropdown text='Pack size' options={packSizes} simple item onChange={this.props.changePackSize} />
-                            <Dropdown text='Sort by...' options={sortByOptions} simple item onChange={this.props.changeSortBy} />
-                        </Menu.Menu>
-                        : null
+
+
+                    <Menu.Menu position='right'>
+                        {
+                            this.props.location.pathname === "/products" ?
+                                <Menu.Menu position='right'>
+                                    <Dropdown text='Tampon size' options={tamponSizes} simple item onChange={this.props.changeTamponSize} />
+                                    <Dropdown text='Pack size' options={packSizes} simple item onChange={this.props.changePackSize} />
+                                    <Dropdown text='Sort by...' options={sortByOptions} simple item onChange={this.props.changeSortBy} />
+                                </Menu.Menu>
+                                : null
+                        }
+                        <Link to="/checkout">
+                            <Button><i className="shopping basket icon">{this.props.basket.length}</i></Button>
+                        </Link>
+
+                    </Menu.Menu>
                 }
+
 
             </Menu >
         );
